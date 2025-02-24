@@ -163,7 +163,7 @@ def plot_lines(list_to_plot, list_name, axis_label, folder, title, x_axis = None
         plt.style.use('seaborn')
     n_iter = list_to_plot[0].size
     plt.figure()
-    for _, item in enumerate(zip(list_to_plot, list_name)):
+    for data, item in enumerate(zip(list_to_plot, list_name)):
         if x_axis is None:
             plt.plot(np.arange(n_iter), item[0], label = item[1])
         else:
@@ -171,6 +171,7 @@ def plot_lines(list_to_plot, list_name, axis_label, folder, title, x_axis = None
     plt.xlabel(axis_label[0], fontsize=20)
     plt.ylabel(axis_label[1], fontsize=20)
     plt.legend(fontsize=20)
+
     if show:
         plt.show()
     else:
